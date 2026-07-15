@@ -1,10 +1,5 @@
 const nodemailer = require("nodemailer");
 
-const dns = require("dns");
-
-dns.lookup("smtp.gmail.com", { all: true }, (err, addresses) => {
-  console.log("SMTP DNS:", addresses);
-});
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
