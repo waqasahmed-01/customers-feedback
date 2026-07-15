@@ -1,9 +1,25 @@
-const dns = require("dns");
+const net = require("net");
 
-dns.lookup("smtp-relay.brevo.com", (err, address, family) => {
-  if (err) {
-    console.error("DNS Error:", err);
-  } else {
-    console.log("Resolved:", address, "IPv" + family);
-  }
+const socket = net.createConnection(
+  {
+    host: "smtp-relay.brevo.com",
+    port: 587,
+    timeout: 10000,
+  },
+  () => {
+    console.log("✅ TCP connection established");
+    socket.end();
+    process.exit(0);
+  },
+);
+
+socket.on("timeout", () => {
+  console.log("❌ TCP connection timeout");
+  socket.destroy();
+  process.exit(1);
+});
+
+socket.on("error", (err) => {
+  console.log("❌ TCP error:", err);
+  process.exit(1);
 });
