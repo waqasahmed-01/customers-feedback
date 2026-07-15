@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Send Feedback</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#"> Customer Feedback System </a>
+
+        <div class="d-flex">
+          <a href="dashboard.html" class="btn btn-light me-2"> Dashboard </a>
+
+          <a href="send-feedback.html" class="btn btn-primary me-2">
+            Send Feedback
+          </a>
+
+          <button class="btn btn-danger" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow">
+            <div class="card-body p-4">
+              <h3 class="mb-4">Send Feedback Invitation</h3>
+
+              <div id="message"></div>
+
+              <form id="feedbackForm">
+                <div class="mb-3">
+                  <label class="form-label"> Customer Name </label>
+
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label"> Customer Email </label>
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+
+                <button class="btn btn-primary w-100" type="submit">
+                  Send Invitation
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/send-feedback.js"></script>
+  </body>
+</html>
