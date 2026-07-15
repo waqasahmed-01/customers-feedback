@@ -10,14 +10,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-transporter.verify((error) => {
-  if (error) {
-    console.error("SMTP VERIFY ERROR:", error);
-  } else {
-    console.log("Brevo SMTP Server is ready");
-  }
-});
-
 const sendEmail = async ({ to, subject, html }) => {
   return await transporter.sendMail({
     from: `"Customer Feedback System" <${process.env.EMAIL_USER}>`,
