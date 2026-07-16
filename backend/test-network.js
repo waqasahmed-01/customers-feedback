@@ -3,7 +3,7 @@ const net = require("net");
 const socket = net.createConnection(
   {
     host: "smtp-relay.brevo.com",
-    port: 587,
+    port: 465,
     timeout: 10000,
   },
   () => {
